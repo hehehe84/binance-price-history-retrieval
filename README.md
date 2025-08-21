@@ -2,7 +2,7 @@
 
 In order to simplify the installation and manage the orchestration, I chose to use a docker-compose setup.
 
-Setup:
+## Setup:
 
 Create a .env at the root of the folder and enter the following values:
 
@@ -29,6 +29,7 @@ Whenever a change in the application is made, it is important to rebuild the bac
 
 Idea of improvement: using watchtower to monitor changes on the backend
 
+### What do we want to retrieve
 
 Schema used to analyze the fetched data to identify changes in cryptocurrency prices, such as increases or decreases, over the specified time period.
 We basically want to give a candlestick bar information.
