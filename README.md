@@ -81,3 +81,29 @@ Here is the type of response return by the API:
   ]
 }
 ```
+
+## Area for improvement
+
+Being taken by time, I did not have the time to correctly test my setup, and also to correctly save the klines in the database.
+To do so, it would have been interesting to create a proper method in historical-data.service.ts
+
+The endpoint is functionning cause: here is the response when using curl with the default example present in the documentation:
+```
+price-history-retrieval on  master [!] via  v20.18.0 
+❯ curl "https://api.binance.com/api/v3/klines?symbol=BNBBTC&interval=1h&startTime=1655969280000&limit=1"
+
+[[1655971200000,"0.01086000","0.01086600","0.01083600","0.01083800","2290.53800000",1655974799999,"24.85074442",2283,"1171.64000000","12.71225884","0"]]
+```
+
+## Personal thought around the task
+
+I find this task really interesting and it higher my envy to develop using binance API.
+If I have an autocritic to make is mostly on myself. I spend useless time defining a swagger and trying to make a little documentation on the DTO. 
+This was useless time I could have spend registering the information to mongoDb.
+I wish I had more time exploring the API to get accustomed instead of loosing precious time on the documentation.
+I also regret the lack of testing - Enven if I somehow manual test my kline API and got suitable results.
+Finally, I did not manage solving my typing issue to create custom return type, this led me using `// eslint-disable-next-line @typescript-eslint/no-unsafe-return` and similar, which is clearly not ideal.
+
+I am still happy with the result of this task as I managed to get accustom to the Binance API and create an action plan that look realistic.
+
+Thank you for spending time reviewing my work!
