@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
+export type HistoricalDataDocument = HistoricalDataV1 & Document;
+
 @Schema()
 export class HistoricalDataV1 {
   @Prop({ required: true })
