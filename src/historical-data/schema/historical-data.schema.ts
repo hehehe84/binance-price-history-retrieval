@@ -1,17 +1,47 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
-export type HistoricalDataDocument = HistoricalDataV1 & Document;
+export type KlineDocument = Kline & Document;
 
 @Schema()
-export class HistoricalDataV1 {
+export class Kline {
   @Prop({ required: true })
-  ticker: string;
+  symbol: string;
 
   @Prop({ required: true })
-  timeInterval: string;
+  interval: string;
 
   @Prop({ required: true })
-  startPeriod: string;
+  openTime: number;
+
+  @Prop({ required: true })
+  closeTime: number;
+
+  @Prop({ required: true })
+  openPrice: string;
+
+  @Prop({ required: true })
+  highPrice: string;
+
+  @Prop({ required: true })
+  lowPrice: string;
+
+  @Prop({ required: true })
+  closePrice: string;
+
+  @Prop({ required: true })
+  volume: string;
+
+  @Prop({ required: true })
+  quoteAssetVolume: string;
+
+  @Prop({ required: true })
+  numberOfTrades: number;
+
+  @Prop({ required: true, type: String })
+  takerBuyBaseAssetVolume: string;
+
+  @Prop({ required: true, type: String })
+  takerBuyQuoteAssetVolume: string;
 
   @Prop({ default: Date.now })
   createdAt: Date;
@@ -20,5 +50,4 @@ export class HistoricalDataV1 {
   updatedAt: Date;
 }
 
-export const HistoricalDataV1Schema =
-  SchemaFactory.createForClass(HistoricalDataV1);
+export const KlineSchema = SchemaFactory.createForClass(Kline);
